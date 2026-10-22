@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1e1f22">
+  <title>Relay</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="auth" class="auth hidden">
+    <form id="auth-form" class="auth-card" autocomplete="on">
+      <div class="auth-logo"><img src="/favicon.svg" alt="" width="48" height="48"></div>
+      <h1 id="auth-title">Welcome back!</h1>
+      <p id="auth-sub" class="muted">We're so excited to see you again!</p>
+      <p id="auth-invite" class="auth-invite hidden">You've been invited to join a server. Log in or create an account to accept.</p>
+      <label>Username
+        <input id="auth-username" name="username" autocomplete="username" required minlength="2" maxlength="32" pattern="[a-zA-Z0-9_.]+">
+      </label>
+      <label>Password
+        <input id="auth-password" name="password" type="password" autocomplete="current-password" required minlength="6" maxlength="200">
+      </label>
+      <p id="auth-error" class="auth-error" role="alert"></p>
+      <button id="auth-submit" class="btn btn-primary btn-block" type="submit">Log In</button>
+      <p class="muted small"><span id="auth-switch-text">Need an account?</span>
+        <button id="auth-switch" class="link-btn" type="button">Register</button></p>
+    </form>
+  </div>
+
+  <div id="app" class="app hidden">
+    <nav id="rail" class="rail" aria-label="Servers"></nav>
+    <aside id="sidebar" class="sidebar">
+      <header id="sidebar-header" class="sidebar-header"></header>
+      <div id="sidebar-list" class="sidebar-list"></div>
+      <div id="voice-panel" class="voice-panel hidden"></div>
+      <div id="user-panel" class="user-panel"></div>
+    </aside>
+    <div id="scrim" class="scrim"></div>
+    <main id="main" class="main"></main>
+    <aside id="members" class="members hidden" aria-label="Members"></aside>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root"></div>
+  <div id="audio-sink" hidden></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
