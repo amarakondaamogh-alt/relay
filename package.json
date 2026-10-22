@@ -1,0 +1,17 @@
+{
+  "name": "relay-chat",
+  "version": "1.0.0",
+  "description": "Discord-style chat: accounts, servers, channels, DMs, friends, voice/video calls and screen share.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "socket.io": "^4.8.1"
+  }
+}
